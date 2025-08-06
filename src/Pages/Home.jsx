@@ -6,6 +6,7 @@ import pic3 from "../Assests/pic3.jpg"
 import pic5 from "../Assests/pic5.jpeg"
 import CountUp from 'react-countup';
 import pic6 from "../Assests/pic6.jpeg"
+import { useInView } from "react-intersection-observer";
 
 export default function Home() {
     return (
@@ -131,10 +132,10 @@ export default function Home() {
                         <span className="text-yellow-500">TEAM</span>
                     </h2>
                     <p className="text-gray-500 text-sm leading-relaxed">
-                        At Basti Ki Pathshala Foundation, we’re not just building a team; we’re assembling a force for change. As we continue our mission to break barriers and empower communities through education, we invite passionate individuals to join us in making a tangible difference in the lives of underserved children.
+                        Whether you're a seasoned educator, a community organizer, or someone with a heart for social impact, there’s a place for you in our team.
                     </p>
                     <p className="text-gray-500 text-sm leading-relaxed">
-                        Join us in this rewarding journey of transformation. Together, let’s pave the way for brighter tomorrows and empower futures, one child at a time.Whether you’re a seasoned educator, a community organizer, or simply someone with a heart for social impact, there’s a place for you in our team. Together, we’ll collaborate, innovate, and inspire, working towards a future where every child has the opportunity to thrive.
+                        Join us in this rewarding journey of transformation. Together, let’s pave the way for brighter tomorrows and empower futures, one child at a time.
                     </p>
                     <div className="flex gap-4 mt-4">
                         <Link to="/donate" className="bg-yellow-400 hover:bg-yellow-500 text-white px-6 py-3 rounded-md font-semibold transition">
@@ -187,22 +188,32 @@ export default function Home() {
                 <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
                     <h2 className="text-4xl font-bold mb-12">Our Impact</h2>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+
                         {[
                             { label: "Life Changed", value: 31245 },
                             { label: "Meals Served", value: 28976 },
                             { label: "Interns", value: 19854 },
                             { label: "Supporters", value: 10989 },
-                        ].map((item, idx) => (
-                            <div key={idx}>
-                                <div className="text-5xl font-extrabold text-yellow-400">
-                                    <CountUp end={item.value} duration={3} separator="," />
+                        ].map((item, idx) => {
+                            const { ref, inView } = useInView({ triggerOnce: true });
+
+                            return (
+                                <div key={idx} ref={ref}>
+                                    <div className="text-5xl font-extrabold text-yellow-400">
+                                        {inView ? (
+                                            <CountUp end={item.value} duration={3} separator="," />
+                                        ) : (
+                                            "0"
+                                        )}
+                                    </div>
+                                    <p className="mt-2 text-lg font-semibold">{item.label}</p>
                                 </div>
-                                <p className="mt-2 text-lg font-semibold">{item.label}</p>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </section>
+
         </div>
     );
 }
