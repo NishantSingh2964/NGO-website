@@ -4,6 +4,7 @@ import heroBg from "../Assests/image-hero.jpg";
 import missionImage from "../Assests/pic1.jpeg"
 import ourStoryImage from "../Assests/pic2.jpeg"
 import CountUp from "react-countup";
+import { InView } from "react-intersection-observer";
 
 export default function AboutUs() {
     return (
@@ -37,30 +38,23 @@ export default function AboutUs() {
                         Together, we strive towards a common goal: to empower every child with the opportunity to thrive.
                     </p>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center font-semibold text-xl mt-10">
-                        <div>
-                            <div className="text-5xl font-extrabold">
-                                <CountUp end={31245} duration={2.5} separator="," />
-                            </div>
-                            <div className="mt-2 text-black">Lives Changed</div>
-                        </div>
-                        <div>
-                            <div className="text-5xl font-extrabold">
-                                <CountUp end={28976} duration={2.5} separator="," />
-                            </div>
-                            <div className="mt-2 text-black">Meals Served</div>
-                        </div>
-                        <div>
-                            <div className="text-5xl font-extrabold">
-                                <CountUp end={19854} duration={2.5} separator="," />
-                            </div>
-                            <div className="mt-2 text-black">Interns</div>
-                        </div>
-                        <div>
-                            <div className="text-5xl font-extrabold">
-                                <CountUp end={10989} duration={2.5} separator="," />
-                            </div>
-                            <div className="mt-2 text-black">Supporters</div>
-                        </div>
+                        {[
+                            { label: "Lives Changed", value: 31245 },
+                            { label: "Meals Served", value: 28976 },
+                            { label: "Interns", value: 19854 },
+                            { label: "Supporters", value: 10989 },
+                        ].map((item, idx) => (
+                            <InView key={idx} triggerOnce threshold={0.3}>
+                                {({ inView, ref }) => (
+                                    <div ref={ref}>
+                                        <div className="text-5xl font-extrabold text-black-700">
+                                            {inView ? <CountUp end={item.value} duration={2.5} separator="," /> : 0}
+                                        </div>
+                                        <div className="mt-2 text-black">{item.label}</div>
+                                    </div>
+                                )}
+                            </InView>
+                        ))}
                     </div>
                 </div>
             </section>
