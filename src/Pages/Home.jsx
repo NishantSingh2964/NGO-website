@@ -136,7 +136,6 @@ export default function Home() {
                     <p className="text-gray-500 text-sm leading-relaxed">
                         Join us in this rewarding journey of transformation. Together, let’s pave the way for brighter tomorrows and empower futures, one child at a time.Whether you’re a seasoned educator, a community organizer, or simply someone with a heart for social impact, there’s a place for you in our team. Together, we’ll collaborate, innovate, and inspire, working towards a future where every child has the opportunity to thrive.
                     </p>
-                    <p>Join us in this rewarding journey of transformation. Together, let’s pave the way for brighter tomorrows and empower futures, one child at a time.</p>
                     <div className="flex gap-4 mt-4">
                         <Link to="/donate" className="bg-yellow-400 hover:bg-yellow-500 text-white px-6 py-3 rounded-md font-semibold transition">
                             Donate Now
