@@ -131,11 +131,12 @@ export default function Home() {
                         <span className="text-yellow-500">TEAM</span>
                     </h2>
                     <p className="text-gray-500 text-sm leading-relaxed">
-                        Whether you're a seasoned educator, a community organizer, or someone with a heart for social impact, there’s a place for you in our team.
+                        At Basti Ki Pathshala Foundation, we’re not just building a team; we’re assembling a force for change. As we continue our mission to break barriers and empower communities through education, we invite passionate individuals to join us in making a tangible difference in the lives of underserved children.
                     </p>
                     <p className="text-gray-500 text-sm leading-relaxed">
-                        Join us in this rewarding journey of transformation. Together, let’s pave the way for brighter tomorrows and empower futures, one child at a time.
+                        Join us in this rewarding journey of transformation. Together, let’s pave the way for brighter tomorrows and empower futures, one child at a time.Whether you’re a seasoned educator, a community organizer, or simply someone with a heart for social impact, there’s a place for you in our team. Together, we’ll collaborate, innovate, and inspire, working towards a future where every child has the opportunity to thrive.
                     </p>
+                    <p>Join us in this rewarding journey of transformation. Together, let’s pave the way for brighter tomorrows and empower futures, one child at a time.</p>
                     <div className="flex gap-4 mt-4">
                         <Link to="/donate" className="bg-yellow-400 hover:bg-yellow-500 text-white px-6 py-3 rounded-md font-semibold transition">
                             Donate Now
