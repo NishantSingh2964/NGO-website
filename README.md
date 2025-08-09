@@ -32,9 +32,58 @@ A React-based responsive website for an NGO, inspired by [bastikipathshala.org](
 # Clone the repository
 git clone https://github.com/yourusername/ngo-website.git
 
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+
 # Navigate into the folder
 cd ngo-website
 
 # Install dependencies
 npm install
+
+
+ 
+```
+## **📦 Usage**
+```bash
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+---
+
+## **🛠 Tech Stack**
+- **React.js**
+- **Tailwind CSS**
+- **React Router**
+- **react-intersection-observer**
+- **Vite**
+
+---
+
+## **🤝 Contributing**
+1. **Fork** the repository
+2. **Create a new branch** (`feature/YourFeatureName`)
+3. **Commit** your changes
+4. **Push** to the branch
+5. **Open a pull request**
+
+---
+
+## **📜 License**
+This project is licensed under the **MIT License**.
+```
 
