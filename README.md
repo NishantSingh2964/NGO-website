@@ -76,7 +76,7 @@ npm run preview
 
 ## **🤝 Contributing**
 1. **Fork** the repository
-2. **Create a new branch** (`feature/YourFeatureName`)
+2. **Create a new branch** 
 3. **Commit** your changes
 4. **Push** to the branch
 5. **Open a pull request**
